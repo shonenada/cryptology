@@ -51,8 +51,9 @@ def test_upper_case():
 
 def test_digital():
     for digital in range(0, 10):
-        assert encode(digital) == digital
-        assert decode(digital) == digital
+        digital_char = str(digital)
+        assert encode(digital_char) == digital_char
+        assert decode(digital_char) == digital_char
 
 
 def test_symbol():
@@ -81,15 +82,15 @@ def test_symbol():
 
 def test_lower_string():
     assert encode('anbsdgqo') == 'dqevgjtr'
-    assert encode('gnroiwegnwebxsda') == 'jqurlzhjqlzeazgd'
+    assert encode('gnroiwegnwebxsda') == 'jqurlzhjqzheavgd'
 
     assert decode('dqevgjtr') == 'anbsdgqo'
-    assert decode('jqurlzhjqlzeazgd') == 'gnroiwegnwebxsda'
+    assert decode('jqurlzhjqzheavgd') == 'gnroiwegnwebxsda'
 
 
 def test_upper_string():
     assert encode('ANBSDGQO') == 'DQEVGJTR'
-    assert encode('GNROIWEGNWEBXSDA') == 'JQURLZHJQLZEAZGD'
+    assert encode('GNROIWEGNWEBXSDA') == 'JQURLZHJQZHEAVGD'
 
     assert decode('DQEVGJTR') == 'ANBSDGQO'
-    assert decode('JQURLZHJQLZEAZGD') == 'GNROIWEGNWEBXSDA'
+    assert decode('JQURLZHJQZHEAVGD') == 'GNROIWEGNWEBXSDA'
