@@ -5,7 +5,7 @@ def encode(text):
     return caesar.caesar(text, caesar.encode)
 
 
-def decode(test):
+def decode(text):
     return caesar.caesar(text, caesar.decode)
 
 
