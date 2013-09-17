@@ -1,3 +1,5 @@
+import random
+
 import displacement
 
 
@@ -12,14 +14,14 @@ def decode(text, key):
 def test_lower_case():
     assert encode('a', 0) == 'a'
     assert encode('a', 1) == 'b'
-    assert ecnode('a', 2) == 'c'
+    assert encode('a', 2) == 'c'
     assert encode('a', 3) == 'd'
 
     assert encode('z', 3) == 'c'
     assert encode('y', 3) == 'b'
 
     assert decode('a', 0) == 'a'
-    assert decode('b', 1) == 'b'
+    assert decode('b', 1) == 'a'
     assert decode('d', 3) == 'a'
     assert decode('k', 3) == 'h'
     assert decode('b', 3) == 'y'
@@ -52,8 +54,9 @@ def test_upper_case():
 def test_digital():
     for digital in range(0, 10):
         digital_char = str(digital)
-        assert encode(digital_char) == digital_char
-        assert decode(digital_char) == digital_char
+        random_key = int(random.random() * 10)
+        assert encode(digital_char, random_key) == digital_char
+        assert decode(digital_char, random_key) == digital_char
 
 
 def test_symbol():
