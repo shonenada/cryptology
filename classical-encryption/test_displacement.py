@@ -1,12 +1,12 @@
 import displacement
 
 
-def encode(text):
-    return displacement.displacement(text, displacement.encode)
+def encode(text, key):
+    return displacement.displacement(text, displacement.encode, key)
 
 
-def decode(text):
-    return displacement.displacement(text, displacement.decode)
+def decode(text, key):
+    return displacement.displacement(text, displacement.decode, key)
 
 
 def test_lower_case():
