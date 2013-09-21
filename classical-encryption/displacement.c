@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char encrypto_char(char c, int key);
 void encrypto(char* input, int key);
-
-char decrypto_char(char c, int key);
 void decrypto(char* input, int key);
 
 int main(){
