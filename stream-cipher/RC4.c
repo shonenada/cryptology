@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define STATE_LENGTH 256
+#define MAX_LENGTH 256
 typedef unsigned char byte;
 
 byte* state;
@@ -19,11 +20,16 @@ char* encrypto(const char* text, const char* key);
 byte* decrypto(const char* text, const char* key);
 
 int main(){
-    const char* input = "abcd";
-    const char* key = "abcd";
+    char* input = (char*) malloc(sizeof(char) * MAX_LENGTH);
+    char* key = (char*) malloc(sizeof(char) * MAX_LENGTH);
 
-    printf("%s\n", encrypto(input, key));
-    printf("%s", decrypto(encrypto(input, key), key));
+    printf("Please input the text.\n");
+    scanf("%s", input);
+    printf("Please input the key.\n");
+    scanf("%s", key);
+
+    printf("Encrypto: %s\n", encrypto(input, key));
+    printf("Decrypto: %s", decrypto(encrypto(input, key), key));
     
     return 0;
 }
